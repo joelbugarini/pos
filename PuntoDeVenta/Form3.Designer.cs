@@ -31,26 +31,27 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.Excel = new System.Windows.Forms.Button();
             this.PDF = new System.Windows.Forms.Button();
             this.Editar = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
             this.Agregar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtApellidoUno = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.URL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Imagen = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtURL = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +84,7 @@
             this.Editar.Size = new System.Drawing.Size(25, 25);
             this.Editar.TabIndex = 39;
             this.Editar.UseVisualStyleBackColor = true;
+            this.Editar.Click += new System.EventHandler(this.Editar_Click);
             // 
             // Eliminar
             // 
@@ -93,6 +95,7 @@
             this.Eliminar.Size = new System.Drawing.Size(25, 25);
             this.Eliminar.TabIndex = 38;
             this.Eliminar.UseVisualStyleBackColor = true;
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // Agregar
             // 
@@ -103,6 +106,7 @@
             this.Agregar.Size = new System.Drawing.Size(25, 25);
             this.Agregar.TabIndex = 37;
             this.Agregar.UseVisualStyleBackColor = true;
+            this.Agregar.Click += new System.EventHandler(this.Agregar_Click);
             // 
             // dataGridView1
             // 
@@ -145,34 +149,66 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(641, 161);
             this.dataGridView1.TabIndex = 36;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // txtApellidoUno
+            // Codigo
             // 
-            this.txtApellidoUno.Location = new System.Drawing.Point(190, 377);
-            this.txtApellidoUno.Name = "txtApellidoUno";
-            this.txtApellidoUno.Size = new System.Drawing.Size(135, 20);
-            this.txtApellidoUno.TabIndex = 32;
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
             // 
-            // txtPassword
+            // Nombre
             // 
-            this.txtPassword.Location = new System.Drawing.Point(190, 339);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(135, 20);
-            this.txtPassword.TabIndex = 31;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
-            // txtUsuario
+            // Precio
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(190, 289);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(135, 20);
-            this.txtUsuario.TabIndex = 30;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
             // 
-            // txtId
+            // URL
             // 
-            this.txtId.Location = new System.Drawing.Point(190, 240);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(135, 20);
-            this.txtId.TabIndex = 29;
+            this.URL.HeaderText = "URL";
+            this.URL.Name = "URL";
+            this.URL.ReadOnly = true;
+            // 
+            // Imagen
+            // 
+            this.Imagen.HeaderText = "Imagen";
+            this.Imagen.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Imagen.Name = "Imagen";
+            this.Imagen.ReadOnly = true;
+            // 
+            // txtURL
+            // 
+            this.txtURL.Location = new System.Drawing.Point(190, 377);
+            this.txtURL.Name = "txtURL";
+            this.txtURL.Size = new System.Drawing.Size(135, 20);
+            this.txtURL.TabIndex = 32;
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(190, 339);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(135, 20);
+            this.txtPrecio.TabIndex = 31;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(190, 289);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(135, 20);
+            this.txtNombre.TabIndex = 30;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(190, 240);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(135, 20);
+            this.txtCodigo.TabIndex = 29;
             // 
             // label8
             // 
@@ -224,37 +260,6 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Codigo de Barras";
             // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // URL
-            // 
-            this.URL.HeaderText = "URL";
-            this.URL.Name = "URL";
-            this.URL.ReadOnly = true;
-            // 
-            // Imagen
-            // 
-            this.Imagen.HeaderText = "Imagen";
-            this.Imagen.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Imagen.Name = "Imagen";
-            this.Imagen.ReadOnly = true;
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,17 +271,19 @@
             this.Controls.Add(this.Eliminar);
             this.Controls.Add(this.Agregar);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtApellidoUno);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.txtURL);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "Productos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form3_FormClosing);
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -292,10 +299,10 @@
         private System.Windows.Forms.Button Eliminar;
         private System.Windows.Forms.Button Agregar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtApellidoUno;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtURL;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

@@ -35,6 +35,7 @@
     <ApplicationIcon>iconfinder_miscellaneous-62_809456.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="administrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="administrador.Designer.cs">
+      <DependentUpon>administrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,13 +67,34 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="operador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="operador.Designer.cs">
+      <DependentUpon>operador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="administrador.resx">
+      <DependentUpon>administrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="operador.resx">
+      <DependentUpon>operador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,6 +106,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Data\usuarios.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\usuarios.bkp.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\productos.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,11 +124,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\productos.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\usuarios.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Include="Data\productos.bkp.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -118,12 +152,18 @@
     <Content Include="Resources\anguila.jpg" />
     <Content Include="Resources\caguama.jpg" />
     <Content Include="Resources\caiman.jpg" />
+    <None Include="Resources\cell.ico" />
     <Content Include="Resources\cocodrilo.jpg" />
     <Content Include="Resources\escalera.jpg" />
+    <None Include="Resources\iconfinder_users_2561497.png" />
+    <None Include="Resources\iconfinder_04_171508.png" />
+    <None Include="Resources\iconfinder_Travel-Filled-16_3671992.png" />
     <Content Include="Resources\lagartija.jpg" />
+    <None Include="Resources\pdv.png" />
     <Content Include="Resources\rana.jpg" />
     <Content Include="Resources\serpiente.jpg" />
     <Content Include="Resources\tortuga.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

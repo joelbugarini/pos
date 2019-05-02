@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,9 +44,9 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtApellidoUno = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellidoDos = new System.Windows.Forms.TextBox();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +60,7 @@
             this.Editar = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
             this.Agregar = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,9 +80,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 285);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 22);
+            this.label2.Size = new System.Drawing.Size(144, 22);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre usuario";
+            this.label2.Text = "Nombre usuario*";
             // 
             // label3
             // 
@@ -88,9 +90,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 333);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 22);
+            this.label3.Size = new System.Drawing.Size(96, 22);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Password";
+            this.label3.Text = "Password*";
             // 
             // label4
             // 
@@ -98,9 +100,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(11, 375);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 22);
+            this.label4.Size = new System.Drawing.Size(119, 22);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Apellido Uno";
+            this.label4.Text = "Apellido Uno*";
             // 
             // label5
             // 
@@ -118,9 +120,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(383, 294);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 22);
+            this.label6.Size = new System.Drawing.Size(80, 22);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Nombre";
+            this.label6.Text = "Nombre*";
             // 
             // label7
             // 
@@ -128,9 +130,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(383, 342);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 22);
+            this.label7.Size = new System.Drawing.Size(53, 22);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Tipo";
+            this.label7.Text = "Tipo*";
             // 
             // label8
             // 
@@ -155,6 +157,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(135, 20);
             this.txtUsuario.TabIndex = 9;
+            this.txtUsuario.Text = "JohnyB";
             // 
             // txtPassword
             // 
@@ -162,6 +165,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(135, 20);
             this.txtPassword.TabIndex = 10;
+            this.txtPassword.Text = "123456#";
             // 
             // txtApellidoUno
             // 
@@ -169,28 +173,35 @@
             this.txtApellidoUno.Name = "txtApellidoUno";
             this.txtApellidoUno.Size = new System.Drawing.Size(135, 20);
             this.txtApellidoUno.TabIndex = 11;
+            this.txtApellidoUno.Text = "Bravo";
             // 
-            // textBox6
+            // txtNombre
             // 
-            this.textBox6.Location = new System.Drawing.Point(511, 296);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(135, 20);
-            this.textBox6.TabIndex = 13;
+            this.txtNombre.Location = new System.Drawing.Point(511, 296);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(135, 20);
+            this.txtNombre.TabIndex = 13;
+            this.txtNombre.Text = "John";
             // 
-            // textBox7
+            // txtApellidoDos
             // 
-            this.textBox7.Location = new System.Drawing.Point(511, 247);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(135, 20);
-            this.textBox7.TabIndex = 12;
+            this.txtApellidoDos.Location = new System.Drawing.Point(511, 247);
+            this.txtApellidoDos.Name = "txtApellidoDos";
+            this.txtApellidoDos.Size = new System.Drawing.Size(135, 20);
+            this.txtApellidoDos.TabIndex = 12;
+            this.txtApellidoDos.Text = "Mendez";
             // 
-            // comboBox1
+            // cmbTipo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(511, 342);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(135, 21);
-            this.comboBox1.TabIndex = 14;
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Items.AddRange(new object[] {
+            "Operador",
+            "Administrador"});
+            this.cmbTipo.Location = new System.Drawing.Point(511, 342);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(135, 21);
+            this.cmbTipo.TabIndex = 14;
             // 
             // dataGridView1
             // 
@@ -235,6 +246,7 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(641, 161);
             this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Id
             // 
@@ -317,6 +329,7 @@
             this.Eliminar.Size = new System.Drawing.Size(25, 25);
             this.Eliminar.TabIndex = 17;
             this.Eliminar.UseVisualStyleBackColor = true;
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // Agregar
             // 
@@ -327,21 +340,33 @@
             this.Agregar.Size = new System.Drawing.Size(25, 25);
             this.Agregar.TabIndex = 16;
             this.Agregar.UseVisualStyleBackColor = true;
+            this.Agregar.Click += new System.EventHandler(this.Agregar_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(72, 419);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(185, 22);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "* Campos Requeridos";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.Excel);
             this.Controls.Add(this.PDF);
             this.Controls.Add(this.Editar);
             this.Controls.Add(this.Eliminar);
             this.Controls.Add(this.Agregar);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.cmbTipo);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtApellidoDos);
             this.Controls.Add(this.txtApellidoUno);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsuario);
@@ -354,8 +379,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.Text = "Usuarios";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -377,9 +404,9 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtApellidoUno;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtApellidoDos;
+        private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Agregar;
         private System.Windows.Forms.Button Eliminar;
@@ -393,6 +420,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoDos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.Label label9;
     }
 }
 
