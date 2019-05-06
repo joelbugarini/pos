@@ -35,6 +35,10 @@
     <ApplicationIcon>iconfinder_miscellaneous-62_809456.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LibPrintTicket, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\LibPrintTicket.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -113,7 +117,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Data\productos.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -149,6 +153,7 @@
   <ItemGroup>
     <Content Include="iconfinder_miscellaneous-62_809456.ico" />
     <Content Include="iconfinder_store_384881.ico" />
+    <Content Include="LibPrintTicket.dll" />
     <Content Include="Resources\anguila.jpg" />
     <Content Include="Resources\caguama.jpg" />
     <Content Include="Resources\caiman.jpg" />
@@ -160,6 +165,7 @@
     <None Include="Resources\iconfinder_Travel-Filled-16_3671992.png" />
     <Content Include="Resources\lagartija.jpg" />
     <None Include="Resources\pdv.png" />
+    <None Include="Resources\logo.bmp" />
     <Content Include="Resources\rana.jpg" />
     <Content Include="Resources\serpiente.jpg" />
     <Content Include="Resources\tortuga.jpg" />

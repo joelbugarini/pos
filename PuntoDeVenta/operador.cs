@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+using LibPrintTicket;
 
 namespace PuntoDeVenta
 {
@@ -157,8 +158,38 @@ namespace PuntoDeVenta
         {
             int tot = int.Parse(total.Text.Replace("Total: $ ", "").Replace(".00", ""));
             string pago = Interaction.InputBox("Pago total", "Pago", "0");
+            try
+            {
+                int.Parse(pago);
+                total.Text = "Cambio: " + (int.Parse(pago) - tot).ToString();
 
-            total.Text = (int.Parse(pago) - tot).ToString();
+                imprimir();
+            }
+            catch {
+                MessageBox.Show("Por favor ingrese un numero valido");
+            }            
+        }
+
+        private void imprimir()
+        {
+            try
+            {
+                Ticket ticket = new Ticket();
+                ticket.HeaderImage = Image.FromFile(
+                    @"C:\Users\Joel\source\repos\PuntoDeVenta\PuntoDeVenta\Resources\logo.bmp");
+                ticket.AddSubHeaderLine("Peluches dona chu");
+                ticket.AddSubHeaderLine(DateTime.Now.ToShortDateString());
+
+                ticket.PrintTicket("EC-PM-5890X");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "No se pudo imprimir :("+
+                    " verifica la impresora " + 
+                    ex.Message);
+                
+            }
         }
     }
 }
